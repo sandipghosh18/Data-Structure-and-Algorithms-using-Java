@@ -1,5 +1,6 @@
-
-package LinkedList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Vector;
 
 public class mylinkedlist {
 	Node head;
@@ -33,7 +34,7 @@ public class mylinkedlist {
 		Node temp=head;
 		while(temp!=null)
 		{
-			System.out.println(temp.data);
+			System.out.print(temp.data+"\t");
 			temp=temp.next;
 		}
 	}
@@ -45,11 +46,19 @@ public class mylinkedlist {
 		
 		Node temp=head;
 		 int counter=0;
+		 if(head==null)
+			{
+				System.out.println("No data");
+				return;
+			}
+		 
 		if(index==0)
 		{
 			head=temp.next;
 			return;
 		}
+		
+		
 		while(temp.next!=null)
 		{
 			   
@@ -63,6 +72,50 @@ public class mylinkedlist {
 			
 		}
 		
+	}
+	
+	public int size()
+	{
+		int counter=0;
+		Node temp=head;
+		while(temp!=null)
+		{
+		  temp=temp.next;
+		  counter++;
+		}
+		
+		return counter;
+		
+	}
+	
+	
+	public void set(int index,int x)
+	{
+		int counter=0;
+		Node temp=head;
+		while(temp.next!=null)
+		{
+			if(counter==index)
+			{
+				temp.data=x;
+			}
+			temp=temp.next;
+			counter++;
+		}
+	}
+	
+	public void removehead()
+	{
+		Node temp=head;
+		head=temp.next;
+	}
+	
+	public void clear()
+	{
+		while(size()!=0)
+		{
+		removehead();
+		}
 	}
 	
 	
@@ -83,3 +136,37 @@ public class mylinkedlist {
 	}
 
 }
+
+
+
+public class linkedlistdemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		mylinkedlist li=  new mylinkedlist();
+		li.add(16);
+		li.add(18);
+		li.add(19);
+		li.add(15);
+                li.add(32);
+                li.add(21);
+                System.out.println("The Data List: ");
+		li.display();
+		System.out.println("\nThe size of the List:  "+li.size());
+		li.set(2, 17);
+		System.out.println("\nThe Data List after Set:");
+		li.display();
+		li.remove(4);
+		System.out.println("\nThe Data List after remove: ");
+		li.display();
+		System.out.println("\nThe size of the List:  "+li.size());
+		
+		
+		
+	
+		
+
+	}
+
+}
+
