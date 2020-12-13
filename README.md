@@ -8,3 +8,7 @@ In this repository I am going to work on Data structure and algorithms using Jav
 * Using sorting techniques like Bubble sort
 * Algorithms and much more
 
+## Developer
+LinkedIn:  
+HackerRank: https://www.hackerrank.com/sandipghoshtiu
+
