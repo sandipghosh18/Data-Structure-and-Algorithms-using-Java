@@ -9,6 +9,6 @@ In this repository I am going to work on Data structure and algorithms using Jav
 * Algorithms and much more
 
 ## Developer
-LinkedIn:  https://www.linkedin.com/in/sandip-ghosh-2ab072183/
-HackerRank: https://www.hackerrank.com/sandipghoshtiu
+* LinkedIn:  https://www.linkedin.com/in/sandip-ghosh-2ab072183/
+* HackerRank: https://www.hackerrank.com/sandipghoshtiu
 
