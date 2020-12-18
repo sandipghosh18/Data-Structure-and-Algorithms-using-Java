@@ -1,0 +1,98 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+class customer
+{
+	
+	private String name;
+	private long phone;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public long getPhone() {
+		return phone;
+	}
+	public void setPhone(long phone) {
+		this.phone = phone;
+	}
+	
+	public customer(String name,long phone)
+	{
+		this.name=name;
+		this.phone=phone;
+		
+	}
+}
+
+class bankoperation
+{
+	int account;
+	String name;
+	long phone;
+	HashMap<Integer,customer> hmap=new HashMap<Integer,customer>();
+	Scanner sc = new Scanner(System.in);
+	customer cc;
+	
+	public void add()
+	{
+		System.out.println("Enter account number:");
+		account=sc.nextInt();
+		
+		System.out.println("Enter name :");
+		name=sc.next();
+		
+		System.out.println("Enter phone :");
+		phone=sc.nextLong();
+		cc= new customer(name,phone);
+		hmap.put(account, cc);
+		
+	}
+	
+	public void display()
+	{
+		Set<Map.Entry<Integer,customer>> disp= hmap.entrySet();
+		
+		for(Map.Entry<Integer, customer> ss:disp)
+		{
+			System.out.println("Account Number"+ss.getKey()+"\nAccount holder name:"+ss.getValue().getName()+
+					"\nPhone Number"+ss.getValue().getPhone());
+		}
+	}
+}
+
+public class objectHash {
+	
+  public static void service()
+	{Scanner sc = new Scanner(System.in);
+	bankoperation op= new bankoperation();
+		while(true)
+		{
+			System.out.println("Enter choice:\n 1.Add data\n2.display");
+			int choice=sc.nextInt();
+			switch(choice)
+			{
+			case 1:
+				op.add();
+				break;
+			case 2:
+				op.display();
+				break;
+				
+			}
+				
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		service();
+		
+
+	}
+
+}
